@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Thumbnails</title>
+    <script src="../js/jquery-2.1.4.js"></script>
+    <script src="../js/thumbnails.js"></script>
+    <link href="../css/thumbnails.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="thumbnails">
+      <div class="active"></div>
+
+      <div class="gutter-images">
+        <img src="../img/candyCorn.jpg">
+        <img src="../img/gummyBears.jpg">
+        <img src="../img/jellyBeans.jpg">
+        <img src="../img/lollipops.jpeg">
+        <img src="../img/mints.jpeg">
+      </div>
+    </div>
+
+    <script>
+      $(function () {
+        $('.thumbnails').thumbnails();
+      });
+    </script>
+
+  </body>
+</html>

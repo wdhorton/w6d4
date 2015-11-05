@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>My Cool Website</title>
+    <script src="../js/jquery-2.1.4.js"></script>
+    <script src="../js/tabs.js"></script>
+    <link href="../css/tabs.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <ul class="tabs" data-content-tabs=".content-tabs">
+      <li><a class="active" href="#golden-retriever">Golden Retriever</a></li>
+      <li><a href="#corgi">Corgi</a></li>
+      <li><a href="#great-dane">Great Dane</a></li>
+    </ul>
+    <section class="content-tabs">
+      <article id="golden-retriever" class="active">
+        <p>
+          Golden retrievers are the best!
+        </p>
+      </article>
+      <article id="corgi">
+        <p>
+          Corgis are cool too.
+        </p>
+      </article>
+      <article id="great-dane">
+        <p>
+          Great danes are big
+        </p>
+      </article>
+    </section>
+
+    <script>
+      $(function () {
+        $('.tabs').tabs();
+      })
+    </script>
+  </body>
+</html>
