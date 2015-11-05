@@ -5,10 +5,11 @@
     this.$el.on("mousemove", this.showFocusBox.bind(this));
     this.$el.on("mouseleave", this.removeFocusBox.bind(this));
     this.size = "100px";
-
   };
 
   Zoomable.prototype.showFocusBox = function (event) {
+    console.log(event.clientX, event.clientY);
+    $(".zoomed-image").remove();
     var $focusBox = this.$el.find("div.focus-box");
 
     if ($focusBox.length === 0) {
@@ -17,25 +18,29 @@
       this.$el.append($focusBox);
     }
 
-    $focusBox.css({"top": event.offsetY, "left": event.offsetX});
-    this.showZoom(event.offsetX, event.offsetY);
+    $focusBox.css({"top": event.clientY, "left": event.clientX});
+    this.showZoom(event.clientX, event.clientY);
   };
 
   Zoomable.prototype.removeFocusBox = function (event) {
     var $focusBox = this.$el.find("div.focus-box");
     $focusBox.remove();
-    this.$el.find("div.zoomed-image").remove();
+    $(".zoomed-image").remove();
   };
 
   Zoomable.prototype.showZoom = function (xDiff, yDiff) {
     $zoomedImg = $("<div class='zoomed-image'></div>");
     $("body").append($zoomedImg);
+
+    var height = $(window).height();
+    var string = (-6 * xDiff) + "px " + (-4.5 * yDiff) + "px"
+
     $zoomedImg.css({
-      "width": $(window).height,
-      "height": $(window).height,
-      "background-image": 'http://cdn.wonderfulengineering.com/wp-content/uploads/2013/12/high-definition-desktop-download-3.jpg',
+      "width": height + "px",
+      "height": height + "px",
+      "background-image": 'url(http://cdn.wonderfulengineering.com/wp-content/uploads/2013/12/high-definition-desktop-download-3.jpg)',
       "background-size": "300%",
-      "background-position": (xDiff * -3) + " " + (yDiff * -3)
+      "background-position": string
     });
 
   }

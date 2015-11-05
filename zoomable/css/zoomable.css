@@ -22,7 +22,7 @@ div.zoomable img {
 }
 
 div.zoomable > div.focus-box {
-  border: 5px solid white;
+  border: 1px solid white;
   position: absolute;
 }
 
