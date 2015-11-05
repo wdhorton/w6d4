@@ -1,4 +1,4 @@
-html, body, div {
+html, body, div, a {
   padding: 0;
   margin: 0;
   border: 0;
@@ -11,7 +11,7 @@ html, body, div {
   background: transparent;
 }
 
-.group {
+.group:after {
   content: "";
   display: block;
   clear: both;
@@ -21,12 +21,39 @@ div.thumbnails {
   width: 400px;
 }
 
+div.gutter-images {
+  width: 90%;
+  position: relative;
+  left: 5%;
+}
+
 div.gutter-images img {
   width: 20%;
+  height: 60px;
   display: block;
   float: left;
 }
 
+div.active {
+  height: 320px;
+}
+
 div.active img {
   width: 100%;
+}
+
+a.nav {
+  width: 5%;
+  font-size: 40px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+a.nav.right {
+  left: 95%;
+}
+
+div.gutter {
+  position: relative;
 }
